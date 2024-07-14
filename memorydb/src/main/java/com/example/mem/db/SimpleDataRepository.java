@@ -63,6 +63,7 @@ abstract public class SimpleDataRepository<T extends Entity, ID> implements Data
 
 	// read
 
+	@Override
 	public Optional<T> findById(ID id){
 		return dataList.stream()
 			.filter(it -> {
@@ -74,6 +75,7 @@ abstract public class SimpleDataRepository<T extends Entity, ID> implements Data
 
 
 
+	@Override
 	public List<T> findAll(){
 
 
@@ -88,7 +90,7 @@ abstract public class SimpleDataRepository<T extends Entity, ID> implements Data
 
 
 	// delete
-
+	@Override
 	public void delete(ID id){
 		var deleteEntity = dataList.stream()
 			.filter(it -> {
